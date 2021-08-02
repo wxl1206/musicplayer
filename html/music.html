@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music</title>
+    <link rel="stylesheet" href="../css/music.css" type="text/css">
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="player">
+            <div id="header">
+                <div id="h-left">
+                    <h4>Music Player</h4>
+                </div>
+                <div id="h-right">
+                    <input type="text" id="input" v-model='query' @keyup.enter="searchMusic();" placeholder="输入搜索的歌曲/歌手">
+                </div>
+            </div>
+            <div id="center">
+                <div id="left">
+                    <ul id="song">
+                        <li v-for="item in musicList" v-cloak>
+                            <a href="#" @click="playMusic(item.id)"><img src="../img/播放.png"></a>
+                            <b>{{ item.name }}</b>
+                            <span v-if="item.mvid!=0" @click="playMv(item.mvid)"><img src="../img/MV.png"></span>
+                        </li>
+                    </ul>
+                </div>
+                <div id="middle" :class="{playing:isPlay}">
+                    <div id="pic">
+                        <img :src="coverUrl" class="cover autoRotate">
+                    </div>
+                    <img v-if="isPoint" v-cloak src="https://i.loli.net/2020/03/23/hQPuH4gNRx7XayI.png" class="disc autoRotate" />
+                    
+                    <img v-if="isPoint" v-cloak src="https://i.loli.net/2020/03/23/gZHko2WlpJNcGPv.png" class="play_bar" />
+                    
+                </div>
+                <div id="right">
+                    <h5>热门评论</h5>
+                    <div id="comments">
+                    <ul class='comment_list' v-for="item in hotComments" v-cloak>
+                        <li >
+                            <div class="div1"><img :src="item.user.avatarUrl">
+                                <dd class="name">{{item.user.nickname}}</dd></div>
+                            <div class="div2">
+                                <dd class="detail">
+                                    {{item.content}}
+                                  </dd>
+                            </div>
+                          
+                        </li>
+                      </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <audio :src="musicUrl" @play="play" @pause="pause" ref='audio'controls autoplay loop class="myaudio"></audio>
+            </div>
+            
+    </div>
+    <div class="video_con" v-if="showVideo" >
+        <div class="mask" @click="closeMv" v-cloak></div>
+        <video ref='video' :src="mvUrl" controls="controls" v-cloak></video>
+        
+    </div>
+    
+    </div>
+</body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../js/music.js"></script>
+</html>

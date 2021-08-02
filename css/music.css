@@ -1,0 +1,308 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    /*background-color: rgb(214, 214, 214);*/
+}
+
+body{
+    width: 100%;
+    height: 100%;
+}
+
+#container{
+    position: relative;
+}
+
+#player{
+    width: 1000px;
+    height: 600px;
+    background-color: white;
+    position: relative;
+    margin: 3% 15% 3% 18%;
+    border: rgb(226, 226, 226) 1px solid;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px grey;
+}
+
+#header{
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    background-color: rgba(182, 134, 236, 0.822);
+    box-shadow: 0px 1px 6px rgb(161, 160, 160);
+}
+
+#h-left{
+    float: left;
+    color: ivory;
+    padding-left: 80px;
+    line-height: 60px;
+    font-size: large;
+    background-image: url("../img/音乐\ 播放\ 旋律.png");
+    background-repeat: no-repeat;
+    background-size: 50px;
+    background-position-x: 20px;
+    background-position-y: 5px;
+}
+
+#h-right{
+    line-height: 60px;
+    margin: 0px 5% 0px 5%;
+}
+
+#input{
+    width: 200px;
+    height:35px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    padding-left: 10px;
+    background: url("../img/搜索--1.png") no-repeat 180px;
+    background-color: white;
+    background-size: 20px;
+}
+
+#h-right{
+    float: right;
+}
+
+#center{
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    margin-top: 6%;
+    background-image: url("../img/背景2.png");
+    background-repeat: no-repeat;
+}
+
+#left{
+    float: left;
+    width: 30%;
+    height: 100%;
+    /* background-color: khaki; */
+}
+
+#song{
+    list-style: none;
+    position: absolute;
+    width: 30%;
+    height: 100%;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+#song>li{
+    width: 100%;
+    height:10%;
+    /* line-height: 48px; */
+    border-bottom: rgb(224, 221, 221) 1px dashed;
+}
+
+#song>li>a{
+    width:10%;
+    height: 100%;
+}
+
+#song>li>a>img{
+    width: 9%;
+    padding-left: 10px;
+    margin-top: 10px;;
+}
+
+#song>li>b{
+    position: absolute;
+    width:60%;
+    height:10%;
+    margin-left: 20px;
+    line-height: 48px;
+    font-size: 16px;
+    color: grey;
+}
+
+#song>li>span{
+    width: 20%;
+    height: 10%;
+    line-height: 48px; 
+    padding-left: 220px;
+    position: absolute;
+    padding-top: 8px;
+}
+
+#song>li>span>img{
+    width: 50%;
+}
+
+#middle{
+    float: left;
+    width: 40%;
+    height: 100%;
+    /* background-color: lightblue; */
+    border-left:2px dashed rgb(197, 195, 195);
+    border-right:2px dashed rgb(197, 195, 195);
+}
+
+#middle>#pic{
+    margin-top: 95px;
+    margin-left: 55px;
+    width: 280px;
+    height: 280px;
+    border-radius: 280px;
+    overflow: hidden;
+    position: absolute;
+}
+
+#middle>div>img{
+    width: 280px;
+}
+
+#right{
+    float: left;
+    width: 29.6%;
+    height: 100%;
+    /* background-color: lightpink; */
+    overflow: scroll;
+}
+
+#right>h5{
+    height: 10%;
+    line-height: 48px;
+    color: rgb(121, 120, 120);
+    font-size: 20px;
+    text-align: center;
+}
+
+.comment_list{
+    overflow: scroll;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+.comment_list{
+    margin: 0px 10px 10px 10px;
+}
+
+.comment_list>li>.div1>img{
+    width: 45px;   
+}
+
+.comment_list>li>.div1{
+    height: 45px;
+    /* border-bottom: 1px dotted rgb(187, 186, 186) */
+}
+
+.comment_list>li>.div1>img{
+    float:left;
+    padding-left: 10px;
+}
+
+.comment_list>li>.div1>dd{
+    float: left;
+    padding-left: 25px;
+    line-height: 40px;
+    color: grey;
+}
+
+.name{
+    font-size: 16px;
+}
+
+.comment_list>li>.div2{
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.detail{
+    font-size: 13px;
+    padding: 15px;
+    color: rgb(112, 111, 111);
+}
+
+.comment_list>li{
+    border-bottom: 1px dashed rgb(196, 193, 193);
+}
+
+#footer{
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    margin-top: 54.1%;
+    background-color: rgba(193, 151, 240, 0.822);
+    box-shadow: 0px -1px 5px rgb(161, 160, 160);
+}
+
+audio{
+    width: 95%;
+    padding-top: 5px;
+    height: 50px;
+    padding-left: 25px;
+}
+
+.video_con{
+    position: absolute;
+    top: 60px;
+    /* left: 250px; */
+}
+
+
+.mask{
+    width: 1600px;
+    height: 100%;
+    position:absolute;
+    top: 0px;
+    background-color: rgba(18, 18, 19, 0.4);
+}
+
+video{
+    width: 900px;
+    height: 500px;
+    margin-left: 330px;
+}
+
+.play_bar{
+    position: absolute;
+    margin-left: 180px;
+    transform: rotate(-25deg);
+    transform-origin: 12px 12px;
+    transition: 1s;
+}
+
+.disc{
+    position: absolute;
+    margin-left: 50px;
+    margin-top: 90px;
+    width: 300px;
+}
+
+#middle.playing .play_bar {
+    transform: rotate(0);
+  }
+
+  @keyframes Rotate {
+    from {
+      transform: rotateZ(0);
+    }
+    to {
+      transform: rotateZ(360deg);
+    }
+  }
+
+.autoRotate {
+    animation-name: Rotate;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+    animation-timing-function: linear;
+    animation-duration: 5s;
+}
+
+#middle.playing .disc,
+#middle.playing .cover {
+    animation-play-state: running;
+}
